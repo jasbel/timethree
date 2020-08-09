@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import "mixins/variables";
+
+// 2. Vendors
+
+// 2.5 mixins
+@import "mixins/fonts";
+@import "mixins/functions";
+@import "mixins/helpers";
+@import "mixins/helpers-responsive";
+
+// 3. partials
+@import "partials/reset";
+@import "partials/base";
+@import "partials/user";
+@import "partials/forms";
+@import "partials/table";
+@import "partials/icons";
+@import "partials/buttons";
+@import "partials/type";
+
+// 4. layout
+@import "layout/footer";
+@import "layout/header";
+@import "layout/main";
+@import "layout/nav";
+@import "layout/responsive";
+@import "layout/print";
+
+// 6. Page-specific styles
+@import "view/home";
+@import "view/timer";
+@import "view/jankenpon";
+@import "view/simon";
+
+// 7. Themes
+@import "themes/default";

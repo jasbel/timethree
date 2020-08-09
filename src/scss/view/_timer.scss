@@ -1,0 +1,180 @@
+//title
+.heading {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 45px;
+}
+//timer
+.aj-timer {
+    background-color: skyblue;
+    padding: 75px;
+    
+    &__container {
+        position: relative;
+        border-radius: 50%;
+        border: 3px solid black;
+        box-shadow:
+            inset 0 0 15px #999,
+            0 0 0 15px #e6e6e6,
+            0 0 0 10px #cccccc,
+            0 0 0 15.2px #000000;
+        width: 240px;
+        height: 240px;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        background-color: white; 
+        margin: auto;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: slategrey;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            z-index: 30;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+
+        }
+    }
+    &__number-container {
+        position: absolute;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        // background-color:green;
+    }
+    &__number {
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        z-index: 30;
+        &--1{
+            top: calc(100% * 0.1397 / 2);
+            left: calc(100% * 1.5 / 2);
+        }
+        &--2{
+            top: calc(100% * 0.5 / 2);
+            left: calc(100% * 1.866 / 2);
+        }
+        &--3{
+            top: calc(100% * 1 / 2);
+            left: calc(100% * 1);
+        }
+        &--4{
+            top: calc(100% * 1.5 / 2);
+            left: calc(100% * 1.866 / 2);
+        }
+        &--5{
+            top: calc(100% * (1.5 + 0.366) / 2);
+            left: calc(100% * 1.5 / 2);
+        }
+        &--6{
+            top: calc(100%);
+            left: calc(50%);
+        }
+        &--7{
+            top: calc(100% * (1.5 + 0.366) / 2);
+            left: calc(100% * 0.5 / 2);
+        }
+        &--8{
+            top: calc(100% * 1.5 / 2);
+            left: calc(100% * 0.1397 / 2);
+        }
+        &--9{
+            top: calc(100% * 1 / 2);
+            left: calc(100% * 0);
+        }
+        &--10{
+            top: calc(100% * 0.5 / 2);
+            left: calc(100% * 0.1397 / 2);
+        }
+        &--11{
+            top: calc(100% * 0.1397 / 2);
+            left: calc(100% * 0.5 / 2);
+        }
+        &--12{
+            top: calc(100% * 0);
+            left: calc(50%);
+        }
+    }
+    .center {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    &__component-container {
+        width: 100%;
+        height: 100%;
+    }
+    &__hour {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+    }
+    &__hour-item {
+        @extend .center;
+        width: 100px;
+        height: 100px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background-color: #797ab6;
+            z-index: 10;
+            border-radius: 6px 6px 0 0;
+        }
+
+    }
+    &__minute {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+    }
+    &__minute-item {
+        @extend .center;
+        width: 120px;
+        height: 120px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 90px;
+            background-color: #6d6d6d;
+            z-index: 15;
+            border-radius: 6px 6px 0 0;
+        }
+    }
+    &__second {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+    }
+    &__second-item {
+        @extend .center;
+        width: 180px;
+        height: 180px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background-color: #ff5757;
+            z-index: 20;
+            border-radius: 6px 6px 0 0;
+        }
+    }
+}
