@@ -1,11 +1,16 @@
 .jankenpon {
     padding: 40px 0;
+    &__section {
+        background-color: cornsilk;
+    }
     &__container {
         padding: 30px 0;
+        background-color: bisque;
+        border-radius: 20px;
     }
     &__content {
         position: relative;
-        padding: 5px;
+        padding: 15px;
         border-radius: 20px;
         background-color: papayawhip;
         max-width: 600px;
@@ -15,11 +20,32 @@
         justify-content: space-between;
     }
     &__items {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -45px;
+            background-color: rgba($color: white, $alpha: .4);
+            padding: 2px;
+            border-radius: 15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+        }
         &--left {
-
+            &::before {
+                content: "COMPUTER";
+            }
         }
         &--right {
-
+            &::before {
+                content: "HUMAN";
+            }
+        }
+        button {
+            background-color: transparent;
+            padding: 0;
         }
     }
     &__item {
@@ -120,6 +146,9 @@
             background-size: 70%;
             animation: images-objects 5s ease-in-out infinite;
         }
+        &.visible {
+            display: block;
+        }
     }
 }
 @keyframes images-objects {
@@ -181,3 +210,4 @@
         transform: translate(-170px, -105px);
     }
 }
+

@@ -1,3 +1,33 @@
 /* ***********************
  *      FOOTER
  *********************** */
+ .footer {
+    padding: 20px 30px;
+    background-color: $color-black;
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+    &__menu {
+        display: flex;
+        li {
+            a {
+                padding: 12px;
+                font-family: $font-heading;
+                @include font-responsive(24, 20) ;
+                text-decoration: none;
+                color: $color-silver;
+            }
+        }
+    }
+    &__social {
+
+    }
+    &__hr {
+        height: 5px;
+        background-color: $color-silver;
+    }
+ }

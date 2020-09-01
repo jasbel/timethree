@@ -1,9 +1,13 @@
 
 //timer
 .aj-timer {
-    background-color: skyblue;
+    background-color: lavender;
     padding: 75px;
-    
+    .container {
+        background-color: #87ceeb;
+        border-radius: 20px;
+        padding: 50px;
+    }
     &__container {
         position: relative;
         border-radius: 50%;
@@ -155,13 +159,13 @@
     }
     &__second {
         position: absolute;
-        width: 180px;
-        height: 180px;
+        width: 100px;
+        height: 100px;
     }
     &__second-item {
         @extend .center;
-        width: 180px;
-        height: 180px;
+        width: 100px;
+        height: 100px;
         &::before {
             content: "";
             position: absolute;

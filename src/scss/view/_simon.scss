@@ -1,11 +1,16 @@
 .simon {
     padding: 40px 0;
+    &__section {
+        background-color: rgba($color: pink, $alpha: 0.3);
+    }
     &__container {
-        background-color: rgba($color: pink, $alpha: 0.5);
+        padding: 20px;
+        background-color: rgba($color: pink, $alpha: 0.8);
+        border-radius: 20px;
     }
     &__content {
         position: relative;
-        padding: 5px;
+        padding: 20px;
         border-radius: 20px;
         background-color: papayawhip;
         max-width: 600px;
@@ -13,13 +18,23 @@
         margin: auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
     &__item {
-        width: 100px;
-        height: 100px;
+        // max-width: 50%;
+        width: 200px;
+        height: 200px;
         margin: 10px;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.23s ease-in-out;
+        filter: opacity(0.6);
+        cursor: pointer;
+
+        //$small-x-tablet: 768px
+        @media screen and (max-width: $small-x-tablet) {
+            width: 130px;
+            height: 130px;
+        }
+
         &--tl {
             border-top-left-radius: 100%;
         }
@@ -45,8 +60,8 @@
             background-color: rgba($color: blue, $alpha: 1);
         }
         &:hover {
-            // filter: brightness(2.5) saturate(2.5);
-            cursor: pointer;
+            filter: opacity(1);
+            box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
         }
     }
     &__message {

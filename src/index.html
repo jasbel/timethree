@@ -12,17 +12,20 @@
 <body>
     <!--         Header            -->
     <header class="header">
-        <div class="footer__logo">@SBEL</div>
+        <div class="header__logo logo">@sbel</div>
         <nav>
-            <ul class="footer__menu">
-                <li><a href="">Jankenpon</a></li>
+            <ul class="header__menu">
+                <li><a href="#timer-analogic">Reloj Analogico</a></li>
+                <li><a href="#jankenpon">Jankenpon</a></li>
+                <li><a href="#simon">Simon Dice</a></li>
             </ul>
             
-            <ul class="footer__social">
-                <li><a href="">Jankenpon</a></li>
+            <ul class="header__social">
+                <li><a href=""><i></i></a></li>
             </ul>
         </nav>
     </header>
+    <hr class="header__hr">
     <!--        End Header         -->
     <!--        Main         -->
     <main>
@@ -32,7 +35,7 @@
     </main>
     <!--        End Main         -->
     <!--        Section Analogic Timer         -->
-    <section class="aj-timer">
+    <section id="timer-analogic" class="aj-timer">
         <div class="container">
             <h2 class="heading">Timer Analogic</h2>
             <div class="aj-timer__container">
@@ -67,21 +70,22 @@
     <!--        End Analogic Timer         --> 
 
     <!--        Jankenpon         -->
-    <section class="jankenpon__section">
+    <section id="jankenpon" class="jankenpon__section">
         <div class="container">
             <div class="jankenpon__container">
                 <h2 class="heading">Jankenpon</h2>
                 <div class="jankenpon__content">
-                    <div class="jankenpon__items jankenpon__items--left">
-                        <div class="jankenpon__item jankenpon__item--rock"></div>
-                        <div class="jankenpon__item jankenpon__item--paper"></div>
-                        <div class="jankenpon__item jankenpon__item--scissors"></div>
+                    <div class="jankenpon__items jankenpon__items--left" data-id="computer">
+                        <div id="rock-c" class="jankenpon__item jankenpon__item--rock" data-id="paper"></div>
+                        <div id="paper-c" class="jankenpon__item jankenpon__item--paper" data-id="paper"></div>
+                        <div id="scissors-c" class="jankenpon__item jankenpon__item--scissors" data-id="scissors"></div>
                     </div>
-                    <div class="jankenpon__items jankenpon__items--right">
-                        <div class="jankenpon__item jankenpon__item--rock"></div>
-                        <div class="jankenpon__item jankenpon__item--paper"></div>
-                        <div class="jankenpon__item jankenpon__item--scissors"></div>
+                    <div class="jankenpon__items jankenpon__items--right" data-id="human">
+                        <div id="rock" class="jankenpon__item jankenpon__item--rock" data-id="rock"></div> 
+                        <div id="paper" class="jankenpon__item jankenpon__item--paper" data-id="paper"></div>
+                        <div id="scissors" class="jankenpon__item jankenpon__item--scissors" data-id="scissors"></div>
                     </div>
+                    <div class="jankenpon__message">Message</div>
                 </div>
             </div>
         </div>
@@ -89,7 +93,7 @@
     <!--        End Jankenpon         -->
 
      <!--        Simon         -->
-     <section class="simon__section">
+     <section id="simon" class="simon__section">
         <div class="container">
             <div class="simon__container">
                 <h2 class="heading">Simon Dice</h2>
@@ -105,23 +109,30 @@
     <!--        End simon         -->
 
     <!--        Footer         -->
+    <hr class="footer__hr">
     <footer class="footer">
         <div class="container">
-            <div class="footer__logo">@SBEL</div>
-        
-            <ul class="footer__menu">
-                <li><a href="">Jankenpon</a></li>
-            </ul>
+           <div class="footer__container">
+                <a href="/" class="footer__logo logo">[@sbel]</a>
             
-            <ul class="footer__social">
-                <li><a href="">Jankenpon</a></li>
-            </ul>
-            <span class="footer__copyright">Copyright - 2020</span>
-            
+                <ul class="footer__menu">
+                    <li><a href="#timer-analogic">Reloj Analogico</a></li>
+                <li><a href="#jankenpon">Jankenpon</a></li>
+                <li><a href="#simon">Simon Dice</a></li>
+                </ul>
+                
+                <ul class="footer__social">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+                <span class="footer__copyright">Copyright - 2020</span>
+                
+           </div>
         </div>
     </footer>
     <!--        End Footer         -->
-    <script src="./js/scripts.js"></script>
+    <script src="./js/main.min.js"></script>
 </body>
 
 </html>

@@ -28,19 +28,36 @@ const { src, dest, watch, series, parallel } = require('gulp');
 
 // Importing all the Gulp-related packages we want to use
 const sourcemaps = require('gulp-sourcemaps');
+
 const sass = require('gulp-sass');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-var replace = require('gulp-replace');
-const minifyJS = require("gulp-babel-minify");
+/*
+"@babel/cli": "^7.7.7",
+"@babel/core": "^7.7.7",
+"@babel/polyfill": "^7.7.0",
+"@babel/preset-env": "^7.7.7",
+"@babel/register": "^7.7.7",
+*/
 
-const browserSync = require("browser-sync").create();
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const plumber = require('gulp-plumber');
+
+const newer = require("gulp-newer");
 const imagemin = require("gulp-imagemin");
 const pug = require("gulp-pug");
-const newer = require("gulp-newer");
+const browserSync = require("browser-sync").create();
+
+// var replace = require('gulp-replace');
+
+// "gulp-babel-minify": "^0.5.1",
+// const minifyJS = require("gulp-babel-minify");
+
+//         "gulp-terser": "^1.3.2",
+// const terser = require('gulp-terser');
 
 //sass options
 const sassOptions = {
@@ -74,18 +91,6 @@ function scssTask() {
         .pipe(browserSync.reload({ stream: true })); //recharge page
 }
 
-// JS task: concatenates and uglifies JS files to script.js
-function jsTask() {
-    return src([
-            files.jsPath
-            //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
-        ])
-        .pipe(concat('main.min.js'))
-        .pipe(uglify())
-        .pipe(dest('dist/js'))
-        .pipe(browserSync.reload({ stream: true }));
-}
-
 //Minify images
 function imagesTask() {
     return src([files.imagesPath])
@@ -110,14 +115,47 @@ function pugHTMLTask() {
         .pipe(browserSync.reload({ stream: true }));
 }
 
+// JS task: concatenates and uglifies JS files to script.js
+// function jsTask() {
+//     return src([
+//             files.jsPath
+//         ])
+//         .pipe(concat('main.min.js'))
+//         .pipe(uglify())
+//         .pipe(dest('dist/js'))
+//         .pipe(browserSync.reload({ stream: true }));
+// }
+
 //js Babel codigo moderno
-function jsBabelTask() {
+// function jsBabelTask() {
+//     return src([files.jsPath])
+//         .pipe(concat('main.min.js'))
+//         .pipe(minifyJS({ mangle: { keepClassName: true } }))
+//         .pipe(dest("dist/js"))
+//         .pipe(browserSync.reload({ stream: true }))
+// }
+
+// function esTask(){
+//     return src([files.jsPath])
+//       .pipe(terser())
+//       .pipe(concat("main.min.js"))
+//       .pipe(dest('dist/js'));
+//   }
+
+
+function taskBabel() {
     return src([files.jsPath])
-        .pipe(concat('main.min.js'))
-        .pipe(minifyJS({ mangle: { keepClassName: true } }))
+        .pipe(plumber())
+        .pipe(
+            babel({
+                presets: ["@babel/preset-env"],
+            }),
+        )
+        .pipe(concat("main.min.js"))
+        .pipe(uglify())
         .pipe(dest("dist/js"))
-        .pipe(browserSync.reload({ stream: true }))
 }
+
 //index HTML
 function indexHtmlTask() {
     return src([files.indexHtmlPath])
@@ -156,7 +194,9 @@ function watchTask() {
     watch([files.fontPath], series(fontTask));
     watch([files.indexHtmlPath], series(indexHtmlTask));
     // watch([files.htmlPath], series(pugHTMLTask));
-    watch([files.jsPath], series(jsBabelTask));
+    // watch([files.jsPath], series(jsBabelTask));
+    watch([files.jsPath], series(taskBabel));
+    // watch([files.jsPath], series(esTask));
     watch("dist/*").on("change", browserSync.reload);;
     watch("src/*.html").on("change", browserSync.reload);;
 }
@@ -175,7 +215,9 @@ exports.default = series(
         scssTask,
         imagesTask,
         // jsTask,
-        jsBabelTask,
+        // jsBabelTask,
+        // esTask,
+        taskBabel,
         // pugHTMLTask,
         //docsGitHUb,
     ),
