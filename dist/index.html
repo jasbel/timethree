@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MyWeb</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <!--         Header            -->
+    <header class="header">
+        <div class="header__logo logo">@sbel</div>
+        <nav>
+            <ul class="header__menu">
+                <li><a href="#timer-analogic">Reloj Analogico</a></li>
+                <li><a href="#jankenpon">Jankenpon</a></li>
+                <li><a href="#simon">Simon Dice</a></li>
+            </ul>
+            
+            <ul class="header__social">
+                <li><a href=""><i></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr class="header__hr">
+    <!--        End Header         -->
+    <!--        Main         -->
+    <main>
+        <div class="container">
+
+        </div>
+    </main>
+    <!--        End Main         -->
+    <!--        Section Analogic Timer         -->
+    <section id="timer-analogic" class="aj-timer">
+        <div class="container">
+            <h2 class="heading">Timer Analogic</h2>
+            <div class="aj-timer__container">
+                <div class="aj-timer__number-container">
+                    <div class="aj-timer__number aj-timer__number--1">1</div>
+                    <div class="aj-timer__number aj-timer__number--2">2</div>
+                    <div class="aj-timer__number aj-timer__number--3">3</div>
+                    <div class="aj-timer__number aj-timer__number--4">4</div>
+                    <div class="aj-timer__number aj-timer__number--5">5</div>
+                    <div class="aj-timer__number aj-timer__number--6">6</div>
+                    <div class="aj-timer__number aj-timer__number--7">7</div>
+                    <div class="aj-timer__number aj-timer__number--8">8</div>
+                    <div class="aj-timer__number aj-timer__number--9">9</div>
+                    <div class="aj-timer__number aj-timer__number--10">10</div>
+                    <div class="aj-timer__number aj-timer__number--11">11</div>
+                    <div class="aj-timer__number aj-timer__number--12">12</div>
+                </div>
+                <!-- <div class="aj-timer__component-container"> -->
+                    <div id="hour" class="aj-timer__hour">
+                        <div class="aj-timer__hour-item"></div>
+                    </div>
+                    <div id="minute" class="aj-timer__minute">
+                        <div class="aj-timer__minute-item"></div>
+                    </div>
+                    <div id="second" class="aj-timer__second">
+                        <div class="aj-timer__second-item"></div>
+                    </div>
+                <!-- </div> -->
+            </div>
+    
+        </div>
+    </section>
+    <!--        End Analogic Timer         --> 
+
+    <!--        Jankenpon         -->
+    <section id="jankenpon" class="jankenpon__section">
+        <div class="container">
+            <div class="jankenpon__container">
+                <h2 class="heading">Jankenpon</h2>
+                <div class="jankenpon__content">
+                    <div class="jankenpon__items jankenpon__items--left" data-id="computer">
+                        <div id="rock-c" class="jankenpon__item jankenpon__item--rock" data-id="paper"></div>
+                        <div id="paper-c" class="jankenpon__item jankenpon__item--paper" data-id="paper"></div>
+                        <div id="scissors-c" class="jankenpon__item jankenpon__item--scissors" data-id="scissors"></div>
+                    </div>
+                    <div class="jankenpon__items jankenpon__items--right" data-id="human">
+                        <div id="rock" class="jankenpon__item jankenpon__item--rock" data-id="rock"></div> 
+                        <div id="paper" class="jankenpon__item jankenpon__item--paper" data-id="paper"></div>
+                        <div id="scissors" class="jankenpon__item jankenpon__item--scissors" data-id="scissors"></div>
+                    </div>
+                    <div class="jankenpon__message">Message</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--        End Jankenpon         -->
+
+     <!--        Simon         -->
+     <section id="simon" class="simon__section">
+        <div class="container">
+            <div class="simon__container">
+                <h2 class="heading">Simon Dice</h2>
+                <div class="simon__content">
+                    <div class="simon__item simon__item--tl simon__item--red"></div>
+                    <div class="simon__item simon__item--tr simon__item--yellow"></div>
+                    <div class="simon__item simon__item--bl simon__item--green"></div>
+                    <div class="simon__item simon__item--br simon__item--blue"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--        End simon         -->
+
+    <!--        Footer         -->
+    <hr class="footer__hr">
+    <footer class="footer">
+        <div class="container">
+           <div class="footer__container">
+                <a href="/" class="footer__logo logo">[@sbel]</a>
+            
+                <ul class="footer__menu">
+                    <li><a href="#timer-analogic">Reloj Analogico</a></li>
+                <li><a href="#jankenpon">Jankenpon</a></li>
+                <li><a href="#simon">Simon Dice</a></li>
+                </ul>
+                
+                <ul class="footer__social">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+                <span class="footer__copyright">Copyright - 2020</span>
+                
+           </div>
+        </div>
+    </footer>
+    <!--        End Footer         -->
+    <script src="./js/main.min.js"></script>
+</body>
+
+</html>
