@@ -4,6 +4,57 @@
 //global
 const d = document;
 
+/* Analogic Timer */
+//component
+const hour = d.getElementById('hour');
+const minute = d.getElementById('minute');
+const second = d.getElementById('second');
+
+const countdown = function() {
+    // const deadlineInner = document.getElementById(timerPiker);
+    // const deadline=deadlineInner.innerHTML;
+    // const el = document.getElementById(elem);
+    // const days = document.getElementById(daysTimer);
+    // const hours = document.getElementById(hoursTimer);
+    // const minutes = document.getElementById(minutesTimer);
+    let now = new Date(),
+        Time = now / 1000,
+        sec = ('0' + Math.floor(Time % 60)).slice(-2),
+        min = ('0' + Math.floor(Time / 60 % 60)).slice(-2),
+        hr = ('0' + Math.floor(Time / 3600 % 24)).slice(-2);
+
+    const timerUpdate = setInterval(function(){
+
+        if(sec===60){sec=0}
+        if(min===60){min=0}
+        if(hr===24){hr=0}
+        
+        const secDeg = sec * 6;
+        const rotateSec = 'rotate('+secDeg+'deg)';
+        second.style.transform= rotateSec;
+
+        const minDeg = min * 6;
+        const rotateMin = 'rotate('+minDeg+'deg)';
+        minute.style.transform= rotateMin;
+
+        const hrDeg = hr * 30;
+        const rotateHr = 'rotate('+hrDeg+'deg)';
+        hour.style.transform= rotateHr;
+
+        console.log(`${hr}hr = ${hrDeg}deg`);
+        console.log(`${min}min = ${minDeg}deg`);
+        console.log(`${sec}sec = ${secDeg}deg`);
+
+        sec=parseInt(sec) + 1;
+        min=parseFloat(min) + 1/60;
+        hr=parseFloat(hr) + 1/3600;
+
+    }, 1000);
+};
+// countdown('timer-piker', 'timer-now', 'daysTimer', 'hoursTimer','minutesTimer');
+countdown();
+
+/* Jankenpon */
 //element
 const elem1 = d.getElementById('rock');
 const elem2 = d.getElementById('paper');

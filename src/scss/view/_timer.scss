@@ -121,17 +121,19 @@
     &__hour {
         position: absolute;
         width: 100px;
-        height: 100px;
+        height: 233px;
+        transform: rotate(90deg);
     }
     &__hour-item {
         @extend .center;
         width: 100px;
-        height: 100px;
+        height: 120px;
         &::before {
             content: "";
             position: absolute;
+            bottom: 0;
             width: 10px;
-            height: 80px;
+            height: 70px;
             background-color: #797ab6;
             z-index: 10;
             border-radius: 6px 6px 0 0;
@@ -141,7 +143,8 @@
     &__minute {
         position: absolute;
         width: 120px;
-        height: 120px;
+        height: 233px;
+        transform: rotate(45deg);
     }
     &__minute-item {
         @extend .center;
@@ -150,6 +153,7 @@
         &::before {
             content: "";
             position: absolute;
+            bottom: 0;
             width: 6px;
             height: 90px;
             background-color: #6d6d6d;
@@ -160,16 +164,18 @@
     &__second {
         position: absolute;
         width: 100px;
-        height: 100px;
+        height: 233px;
+        transform: rotate(180deg);
     }
     &__second-item {
         @extend .center;
         width: 100px;
-        height: 100px;
+        height: 120px;
         &::before {
             content: "";
             position: absolute;
-            width: 2px;
+            bottom: 0;
+            width: 3px;
             height: 100px;
             background-color: #ff5757;
             z-index: 20;
